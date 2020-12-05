@@ -99,7 +99,7 @@ In order to use `Redux` with our react app we'll need to install a couple of new
 
 Run `npm install react-redux redux`
 
-Once your install has finished let's create a new folder called `store`.
+Once your install has finished let's create a new folder called `store` inside of your `src` folder.
 This folder is going to hold our `Actions`, `Types` and `Reducers`.
 
 Start by creating an `index.js` file in the `store` folder.
