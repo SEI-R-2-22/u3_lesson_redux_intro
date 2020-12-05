@@ -83,7 +83,7 @@ Here's an example:
 
 Redux is built on the concept of `Reducers`, `Actions` and `Types`.
 
-- Reducers are we can break up our state into little modules.
+- Reducers are used so we can break up our state into little modules.
 - Actions are things that we perform to update the state.
 - Types are a definition of the actions we are performing.
 
