@@ -1,5 +1,10 @@
 # Introduction To React and Redux
 
+## Objectives
+
+- Setup Redux with a react app
+- Start initial set up for Redux Todo List
+
 ## Getting Started
 
 - Fork and Clone
@@ -61,3 +66,87 @@ From the `Redux Docs`:
 > ## Community Support
 >
 > As the official binding library for React and Redux, React Redux has a large community of users. This makes it easier to ask for help, learn about best practices, use libraries that build on top of React Redux, and reuse your knowledge across different applications.
+
+## Redux Flow and Setup
+
+Let's start by installing the [Redux devtools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
+
+This tool will allow us to monitor state and any changes in our apps.
+
+### Flow
+
+Because `Redux` operates using a single `Store` to handle our state, it makes deciding which components should store state a lot easier to decide on. Essentially, none of our components store state, `Redux` handles it all for us and allows us to accept that information as `props`.
+
+Here's an example:
+
+![Redux Store](images/redux-store.png)
+
+Redux is built on the concept of `Reducers`, `Actions` and `Types`.
+
+- Reducers are we can break up our state into little modules.
+- Actions are things that we perform to update the state.
+- Types are a definition of the actions we are performing.
+
+We'll put some of this into practice in just a bit.
+
+### Setup
+
+A react app has been provided for you.
+
+If you haven't installed your dependencies yet, do so now by running `npm install`.
+
+In order to use `Redux` with our react app we'll need to install a couple of new dependencies called `react-redux` and `redux`.
+
+Run `npm install react-redux redux`
+
+Once your install has finished let's create a new folder called `store`.
+This folder is going to hold our `Actions`, `Types` and `Reducers`.
+
+Start by creating an `index.js` file in the `store` folder.
+
+Once you've created the `index.js` file, open it in your code editor.
+
+Let's add the following:
+
+```js
+import { createStore } from 'redux'
+
+const store = createStore()
+
+export default store
+```
+
+Now head over to the react app `index.js` where we call `ReactDom.render()`. We need to connect our new Redux store to our react app make your `index.js` look like the following.
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './styles/index.css'
+import App from './App'
+import { Provider } from 'react-redux'
+import store from './store'
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+)
+```
+
+Let's break this down:
+
+- We import the `Provider` component from `react-redux`, this component accepts a `store` prop that is our `store` we created in the previous step.
+- We wrap our `App` component inside of the provider to give any component that lives within `App.js` access to our redux store.
+
+## Exit Notes
+
+We've successfully implemented a redux store with our react app. We'll be using this same repo for the next few lessons.
+
+## Resources
+
+[Redux Docs](https://react-redux.js.org/)
+
+[Why Redux?](https://almerosteyn.com/2016/08/redux-explained-again)
