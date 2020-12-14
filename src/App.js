@@ -1,10 +1,9 @@
 import './styles/App.css'
-import TodoList from "./components/TodoList"
 
 function App() {
   return (
     <div className="App">
-      <TodoList />
+      <h3>Redux Intro</h3>
     </div>
   )
 }
