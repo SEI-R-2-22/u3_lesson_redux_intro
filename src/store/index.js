@@ -1,3 +1,4 @@
+
 import { createStore, combineReducers } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import TodoReducer from './reducers/TodoReducer'
@@ -7,5 +8,6 @@ const store = createStore(
     combineReducers({ todoState: TodoReducer, appState: AppReducer }),
     composeWithDevTools()
 )
+
 
 export default store
