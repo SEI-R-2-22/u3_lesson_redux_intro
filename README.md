@@ -1,15 +1,20 @@
 # Introduction To React and Redux
 
+![](https://apiko.com/blog/content/images/2018/11/React-_--rEDUX.jpeg)
+
+## Overview
+In this lesson, we'll be learning about the advantages of using Redux for state management with React along with how it is set up. If you're familiar with React's `useReducer` hook, Redux will be a natural next step.
+
 ## Objectives
 
 - Setup Redux with a react app
 - Start initial set up for Redux Todo List
 
 ## Getting Started
-
-- Fork and Clone
+- `Fork` and `clone` this repository
 - `npm install`
 
+___
 ## React and State Management
 
 React by default comes with it's own way to handle `state`. We've seen `class` based components with `this.state` and we've seen `functional` components with `useState`.
@@ -98,14 +103,11 @@ If you haven't installed your dependencies yet, do so now by running `npm instal
 
 In order to use `Redux` with our react app we'll need to install a couple of new dependencies called `react-redux` and `redux`.
 
-Run `npm install react-redux redux`
-
-Once your install has finished let's create a new folder called `store` inside of your `src` folder.
+- Run `npm install react-redux redux`
+- Once your install has finished let's create a new folder called `store` inside of your `src` folder.
 This folder is going to hold our `Actions`, `Types` and `Reducers`.
-
-Start by creating an `index.js` file in the `store` folder.
-
-Once you've created the `index.js` file, open it in your code editor.
+- Start by creating an `index.js` file in the `store` folder.
+- Once you've created the `index.js` file, open it in your code editor.
 
 Let's add the following:
 
@@ -142,9 +144,12 @@ Let's break this down:
 - We import the `Provider` component from `react-redux`, this component accepts a `store` prop that is our `store` we created in the previous step.
 - We wrap our `App` component inside of the provider to give any component that lives within `App.js` access to our redux store.
 
-## Exit Notes
+___
+## Recap
 
-We've successfully implemented a redux store with our react app. We'll be using this same repo for the next few lessons.
+We've successfully implemented a redux store with our react app. We'll be using this same repo for the next few lessons. A few notes on Redux before we move on:
+- Redux operates with the principles of `actions`,`types`, and `reducers`
+- It serves as an external state management store for our React app, allowing us to import state only where we need it
 
 ## Resources
 
