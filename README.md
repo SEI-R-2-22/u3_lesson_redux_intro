@@ -13,6 +13,7 @@ In this lesson, we'll be learning about the advantages of using Redux for state 
 ## Getting Started
 - `Fork` and `clone` this repository
 - `npm install`
+- `cd client && npm install`
 
 ___
 ## React and State Management
