@@ -152,7 +152,5 @@ We've successfully implemented a redux store with our react app. We'll be using 
 - It serves as an external state management store for our React app, allowing us to import state only where we need it
 
 ## Resources
-
-[Redux Docs](https://react-redux.js.org/)
-
-[Why Redux?](https://almerosteyn.com/2016/08/redux-explained-again)
+- [Redux Docs](https://react-redux.js.org/)
+- [Why Redux?](https://almerosteyn.com/2016/08/redux-explained-again)
