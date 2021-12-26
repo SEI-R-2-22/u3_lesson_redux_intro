@@ -3,6 +3,9 @@
 ![](https://apiko.com/blog/content/images/2018/11/React-_--rEDUX.jpeg)
 
 ## Overview
+
+In our last unit, we began working with React. With Functional Components, Hooks, Dependencies, and more, we have seen that one of the most powerful features of React is its ability to adapt and evolve. There are a myriad of different ways to build up on the React frame work, and learning how to use them is going to be an important part of making a career in front end development
+
 In this lesson, we'll be learning about the advantages of using Redux for state management with React along with how it is set up. If you're familiar with React's `useReducer` hook, Redux will be a natural next step.
 
 ## Objectives
