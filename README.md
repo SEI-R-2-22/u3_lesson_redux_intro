@@ -1,30 +1,31 @@
-# Introduction To React and Redux
+# Introduction to React Redux
 
 ![](https://apiko.com/blog/content/images/2018/11/React-_--rEDUX.jpeg)
 
 ## Overview
 
-In our last unit, we began working with React. With Functional Components, Hooks, Dependencies, and more, we have seen that one of the most powerful features of React is its ability to adapt and evolve. There are a myriad of different ways to build up on the React frame work, and learning how to use them is going to be an important part of making a career in front end development
+In our last unit, we began working with React. With Functional Components, Hooks, Dependencies, and more, we have seen that one of the most powerful features of React is its ability to adapt and evolve. There are a myriad of different ways to build up on the React framework, and learning how to use them is going to be an important part of making a career in front-end development.
 
-In this lesson, we'll be learning about the advantages of using Redux for state management with React along with how it is set up. If you're familiar with React's `useReducer` hook, Redux will be a natural next step.
+In this lesson, we'll be learning about the advantages of using ***Redux*** for state management with React and how it is set up.
 
 ## Objectives
 
-- Setup Redux with a react app
-- Start initial set up for Redux Todo List
+- Setup Redux with a React app
+- Start initial set up for a Redux state-managed Todo List
 
 ## Getting Started
 - `Fork` and `clone` this repository
-- `npm install`
+- `cd` into the new directory
+- `npm install` to install our dependencies
 
 ___
 ## React and State Management
 
-React by default comes with it's own way to handle `state`. We've seen `class` based components with `this.state` and we've seen `functional` components with `useState`.
+React by default comes with ways to handle `state`. We've seen `functional` components with `useState`. There are also different ways to manage state when using `class` components.
 
-Typical state management follows the top down pattern, where our state is unidirectional in a downward direction. This is referred to as passing props.
+Typical state management follows the top down pattern, where our state is unidirectional in a downward flow. This is referred to as passing props.
 
-Here's an example of React's out of the box data flow:
+Here's an example of React's out-of-the-box data flow:
 
 ![State Flow](images/state-flow.png)
 
@@ -78,13 +79,7 @@ From the `Redux Docs`:
 
 ## Redux Flow and Setup
 
-Let's start by installing the [Redux devtools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd)
-
-This tool will allow us to monitor state and any changes in our apps.
-
-### Flow
-
-Because `Redux` operates using a single `Store` to handle our state, it makes deciding which components should store state a lot easier to decide on. Essentially, none of our components store state, `Redux` handles it all for us and allows us to accept that information as `props`.
+Because `Redux` operates using a single `Store` to handle our state, it makes deciding which components should store state a lot easier to decide. Essentially, none of our components store state, `Redux` handles it all for us and allows us to accept that information as `props`.
 
 Here's an example:
 
@@ -100,59 +95,61 @@ We'll put some of this into practice in just a bit.
 
 ### Setup
 
-A react app has been provided for you.
+A React app has been provided for us already.
 
-If you haven't installed your dependencies yet, do so now by running `npm install`.
-
-In order to use `Redux` with our react app we'll need to install a couple of new dependencies called `react-redux` and `redux`.
+In order to use `Redux` with our React app, we'll need to install a couple of new dependencies called `react-redux` and `redux`.
 
 - Run `npm install react-redux redux`
-- Once your install has finished let's create a new folder called `store` inside of your `src` folder.
+- Once your install has finished let's create a new directory called `store` inside of your `src` folder.
 This folder is going to hold our `Actions`, `Types` and `Reducers`.
 - Start by creating an `index.js` file in the `store` folder.
 - Once you've created the `index.js` file, open it in your code editor.
 
-Let's add the following:
+Let's add the following in that `index.js` file:
 
 ```js
 import { createStore } from 'redux'
+// First we import what we need from Redux...
 
-const store = createStore(() => ({})) // Create store accepts a function as an argument, this setup is just temporary until we set up reducers.
+const store = createStore(() => ({}))
+// createStore accepts a function as an argument. This setup is just temporary until we set up Reducers.
 
 export default store
 ```
 
-Now head over to the react app `index.js` where we call `ReactDom.render()`. We need to connect our new Redux store to our react app make your `index.js` look like the following.
+Now, head over to the React app `index.js` where we call `ReactDom.render()`. We need to connect our new Redux store to our React app. Make our `index.js` look like the following:
 
 ```js
 import React from 'react'
-import ReactDOM from 'react-dom'
-import './styles/index.css'
-import App from './App'
+import {createRoot} from 'react-dom/client'
 import { Provider } from 'react-redux'
 import store from './store'
+import './index.css'
+import App from './App'
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'))
+
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 )
+
 ```
 
 Let's break this down:
 
 - We import the `Provider` component from `react-redux`, this component accepts a `store` prop that is our `store` we created in the previous step.
-- We wrap our `App` component inside of the provider to give any component that lives within `App.js` access to our redux store.
+- We wrap our `App` component inside of the provider to give any component that lives within `App.js` access to our Redux store.
 
 ___
 ## Recap
 
-We've successfully implemented a redux store with our react app. We'll be using this same repo for the next few lessons. A few notes on Redux before we move on:
-- Redux operates with the principles of `actions`,`types`, and `reducers`
-- It serves as an external state management store for our React app, allowing us to import state only where we need it
+We've successfully implemented a Redux store with our React app. We'll be using this same repo for the next few lessons. A few notes on Redux before we move on:
+- Redux operates with the principles of `actions`,`types`, and `reducers`.
+- It serves as an external state management store for our React app, allowing us to import state only where we need it.
 
 ## Resources
 - [Redux Docs](https://react-redux.js.org/)
