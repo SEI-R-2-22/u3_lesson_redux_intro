@@ -117,7 +117,7 @@ const store = createStore(() => ({}))
 export default store
 ```
 
-Now, head over to the React app `index.js` where we call `ReactDom.render()`. We need to connect our new Redux store to our React app. Make our `index.js` look like the following:
+Now, head over to the React app `index.js` where we call `root.render()`. We need to connect our new Redux store to our React app. Make our `index.js` look like the following:
 
 ```js
 import React from 'react'
